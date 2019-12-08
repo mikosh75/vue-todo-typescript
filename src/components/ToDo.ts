@@ -12,10 +12,14 @@ import Task from '@/types/Task';
 export default class ToDo extends Vue {
   public tasks: Task[] = [
     { description: 'Make Coffee', completed: false },
-      { description: 'Feed Dragons', completed: false },
+    { description: 'Feed Dragons', completed: false },
   ];
 
   public addTask(description: string): void {
-      this.tasks.push({ description, completed: false });
+    this.tasks.push({ description, completed: false });
+  }
+
+  public changeCompletionState(task: Task): void {
+    task.completed = !task.completed;
   }
 }
